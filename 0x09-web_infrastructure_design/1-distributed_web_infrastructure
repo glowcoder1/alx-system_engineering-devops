@@ -1,1 +1,47 @@
 https://imgur.com/u9KeX2h
+
+You must be able to explain some specifics about this infrastructure:
+
+For every additional element, why you are adding it
+
+Extra server
+Extra server was added to reduce down time of the current system.
+With an extra server, the system will be able to better serve the clients by increasing speed and reliability of the system.
+
+Load balancer
+Load-balancer was added to manage incoming traffic of the server, ensuring that requests are shared among the servers to produce faster response and reduce server downtime.
+
+What distribution algorithm your load balancer is configured with and how it works
+Round robin load balancing is used. It works by assigning each request to each of the servers alternatively. 
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both.
+The Load-balancer is enabling Active-Active setup because all servers are active and traffic is distributed amongst them.
+
+The difference between an Active-Active and  Active-Passive setup is that in
+Active-Active all servers or resources are active while in  Active-Passive setup,
+only one server is primarily active while the other is passive and is on standby. If the active server fails, the passive server takes over.
+
+How a database Primary-Replica (Master-Slave) cluster works
+In a database Primary-Replica (Master-Slave), there is one master database server
+whose data is replicated in one or more slave database servers.
+The slave database server handles read operations, reducing the workload on the
+master database while the master database handles all write or data modification
+operations and logs the updates which are rippled across the slave database server.
+The slave databases are updated synchronously (same time as the master)  or asynchronously(queued and updated later).
+
+What is the difference between the Primary node and the Replica node in regard to the application
+The primary node handles writes or data modification operations,
+it receives immediate updates and changes from the application while the replica handle read operations reducing load on primary node and improving application responsiveness.
+
+You must be able to explain what the issues are with this infrastructure:
+
+Where are SPOF
+Load-balancer, if the load-balancer fails, the whole system fails
+
+Security issues (no firewall, no HTTPS)
+No HTTPS: this means web contents are not encrypted, this means unauthorized users can have access to sensitive information.
+No firewall: Malicious traffic is not filtered. This exposes the system to a wide range of threats from hackers.
+No monitoring:
+	This means there is no information on the health of the servers and
+	load balancers.
+	Monitoring is used to ensure the server is reachable and available to clients.
+	It also measures the health of the server and gives the administrator  relevant information and insights relating to the server.

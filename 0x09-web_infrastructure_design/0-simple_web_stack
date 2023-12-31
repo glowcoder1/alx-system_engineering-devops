@@ -1,1 +1,20 @@
 https://imgur.com/Dlpby7N
+
+mmunicate
+
+You must be able to explain what the issues are with this infrastructure:
+
+SPOF
+The Single point of failure for this infrastructure is the server.
+If any of the servers fails, the entire system fails.
+
+Downtime when maintenance needed
+(like deploying new code web server needs to be restarted)
+
+During maintenance of any of the servers (web server, app server, db server),
+the clients would experience downtime for all of the servers because
+the servers are not separated.
+
+Cannot scale if too much incoming traffic
+This infrastructure cannot be scaled if there is too much traffic because
+there is only one server to handle all incoming traffic.
