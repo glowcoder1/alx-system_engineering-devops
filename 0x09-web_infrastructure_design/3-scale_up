@@ -1,1 +1,10 @@
 https://imgur.com/7hl4yoZ
+You must be able to explain some specifics about this infrastructure:
+For every additional element, why you are adding it
+
+A secondary load balancer is introduced as a fail-safe measure 
+in case the primary load balancer malfunctions.
+
+Dedicated servers are incorporated for particular components, 
+enhancing system performance and fortifying security, especially for the database. 
+This measure ensures heightened protection.

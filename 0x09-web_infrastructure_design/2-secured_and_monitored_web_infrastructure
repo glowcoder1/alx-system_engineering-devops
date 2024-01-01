@@ -1,1 +1,43 @@
 https://imgur.com/RCOmXG5
+
+
+You must be able to explain some specifics about this infrastructure:
+For every additional element, why you are adding it
+SSL (Secured Socket Layer): It is an encryption-based Internet security protocol. 
+It encrypts the data served on the internet. It ensures privacy in communication and integrity of data sent.
+
+What are firewalls for:
+It is used for monitoring and  filtering network traffic based on an organization's previously established security policies. 
+It establishes a barrier between a trusted and untrusted network
+
+Why is the traffic served over HTTPS
+
+HTTPS ensures that any data transferred between the visitor and 
+the website cannot be tampered with or modified by a hacker.
+
+What monitoring is used for
+It is used for tracking and measuring operations on a server. 
+It is used to evaluate the health and condition of the server
+
+How the monitoring tool is collecting data
+The monitoring tool receives logs from its sources and 
+sends the data to the monitoring system (sumo logic).
+
+Explain what to do if you want to monitor your web server QPS
+Queries per second is a measure of the rate of traffic going through a 
+particular server in relation to a network that serves a Web domain. 
+To monitor this, we have to monitor traffic in either direction of the server.
+
+You must be able to explain what the issues are with this infrastructure:
+
+Why terminating SSL at the load balancer level is an issue
+This is an issue because it exposes the traffic between the load-balancer and server. 
+This leaves the system vulnerable to attacks.
+
+Why having only one MySQL server capable of accepting writes is an issue
+When there is high volume of traffic with write operations, 
+it over loads the server and might cause it to fail
+
+Why having servers with all the same components (database, web server and application server) might be a problem
+It might be a problem because these servers have different resource requirements and potential security concerns. 
+Also, maintenance or scaling of any of the servers (web server, app server, database server) would affect the others.
