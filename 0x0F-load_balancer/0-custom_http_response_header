@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Double the number of webservers
 
 echo -e "Doing some checks...\n"
