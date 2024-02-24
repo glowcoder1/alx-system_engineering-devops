@@ -17,10 +17,9 @@ if __name__ == '__main__':
             tasks = requests.get('{}/todos?userId={}'
                                  .format(BASE_URL, id)).json()
             completed_tasks = [task for task in tasks if task.get("completed")]
-            print(
-                f'Employee {employee.get("name")} is done with tasks '
-                f'({len(completed_tasks)}/{len(tasks)}):'
-                )
+            print('Employee {} is done with tasks({}/{}):'
+                  .format(employee.get("name"), len(completed_tasks),
+                                                len(tasks)))
             if len(completed_tasks) > 0:
                 for task in completed_tasks:
-                    print(f'\t {task.get("title")}')
+                    print('\t {}'.format(task.get("title")))
