@@ -13,7 +13,6 @@ if __name__ == '__main__':
 
     with open('{}.csv'.format(user_id), 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        csv_writer.writerow(['User ID', 'Username', 'Completed', 'Task Title'])
         for task in tasks:
             completed = str(task.get('completed'))
             task_title = str(task.get('title'))
