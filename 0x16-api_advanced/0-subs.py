@@ -6,6 +6,7 @@ import sys
 
 
 def number_of_subscribers(subreddit):
+    """  returns the total number of subscribers """
     if subreddit is None:
         return None
     req = requests.get(f"https://www.reddit.com/r/{subreddit}/about.json",
