@@ -17,6 +17,7 @@ def number_of_subscribers(subreddit):
             return res.get("subscribers")
         return 0
 
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Please pass an argument for the subreddit to search.")
