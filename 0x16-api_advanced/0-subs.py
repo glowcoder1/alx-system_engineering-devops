@@ -12,8 +12,10 @@ def number_of_subscribers(subreddit):
                        headers={"User-Agent": "Custom"})
     if req.status_code == 200:
         res = req.json().get("data")
-    return res.get("subscribers")
-
+        subs = res.get("subscribers")
+        if subs:
+            return res.get("subscribers")
+        return 0
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
